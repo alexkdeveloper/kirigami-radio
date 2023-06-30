@@ -104,6 +104,27 @@ Kirigami.ApplicationWindow {
                 text: "NonStopPlay Dance Radio"
                 onClicked: playNonStopPlayDanceRadio()
             }
+
+            Controls.Button {
+                id: decibelEuroDance
+                Layout.alignment: Qt.AlignHCenter
+                text: "Decibel EURODANCE"
+                onClicked: playDecibelEuroDance()
+            }
+
+            Controls.Button {
+                id: techno
+                Layout.alignment: Qt.AlignHCenter
+                text: "Best Of Techno"
+                onClicked: playTechno()
+            }
+
+            Controls.Button {
+                id: energy
+                Layout.alignment: Qt.AlignHCenter
+                text: "Energy FM - Dance Music Radio"
+                onClicked: playEnergy()
+            }
         }
     }
 
@@ -128,5 +149,23 @@ Kirigami.ApplicationWindow {
         player.source = "http://stream.nonstopplay.co.uk/nsp-192k-mp3"
         player.play()
         heading.text = danceRadio.text
+    }
+    function playDecibelEuroDance(){
+        player.stop()
+        player.source = "https://25433.live.streamtheworld.com/DECIBELEURODANCE.mp3"
+        player.play()
+        heading.text = decibelEuroDance.text
+    }
+    function playTechno(){
+        player.stop()
+        player.source = "http://stream.laut.fm/best-of-techno"
+        player.play()
+        heading.text = techno.text
+    }
+    function playEnergy(){
+        player.stop()
+        player.source = "https://radio.streemlion.com:1875/stream"
+        player.play()
+        heading.text = energy.text
     }
 }
