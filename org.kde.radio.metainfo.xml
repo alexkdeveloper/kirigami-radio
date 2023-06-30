@@ -5,8 +5,8 @@
  -->
 <component type="desktop-application">
   <id>org.kde.radio</id>
-  <name>radio Kirigami Application</name>
-  <summary>A short summary describing what this software is about</summary>
+  <name>Radio</name>
+  <summary>Simple Radio</summary>
   <metadata_license>A permissive license for this metadata, e.g. "FSFAP" + Update the SPDX tags above!</metadata_license>
   <project_license>The license of this software as SPDX string, e.g. "GPL-2.0-or-later"</project_license>
   <developer_name>The software vendor name, e.g. "ACME Corporation"</developer_name>
