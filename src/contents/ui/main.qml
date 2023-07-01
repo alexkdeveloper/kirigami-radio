@@ -71,6 +71,7 @@ Kirigami.ApplicationWindow {
             onTriggered: {
                 player.stop()
                 heading.text = "Stopped"
+                metaDataTitle.text = ""
             }
         }
 
@@ -81,6 +82,11 @@ Kirigami.ApplicationWindow {
 
              Kirigami.Heading {
                 id: heading
+                Layout.alignment: Qt.AlignCenter
+            }
+
+            Controls.Label {
+                id: metaDataTitle
                 Layout.alignment: Qt.AlignCenter
             }
 
@@ -130,42 +136,49 @@ Kirigami.ApplicationWindow {
 
     MediaPlayer {
         id: player
+        metaData.onMetaDataChanged: metaDataTitle.text = player.metaData.title
     }
 
     function playDeepHouse(){
+        heading.text = deepHouse.text
+        metaDataTitle.text = ""
         player.stop()
         player.source = "http://strm112.1.fm/deephouse_mobile_mp3"
         player.play()
-        heading.text = deepHouse.text
     }
     function playNonStopPlayPureDance(){
+        heading.text = pureDance.text
+        metaDataTitle.text = ""
         player.stop()
         player.source = "http://stream.nonstopplay.co.uk/nsppd-32k-aac"
         player.play()
-        heading.text = pureDance.text
     }
     function playNonStopPlayDanceRadio(){
+        heading.text = danceRadio.text
+        metaDataTitle.text = ""
         player.stop()
         player.source = "http://stream.nonstopplay.co.uk/nsp-192k-mp3"
         player.play()
-        heading.text = danceRadio.text
     }
     function playDecibelEuroDance(){
+        heading.text = decibelEuroDance.text
+        metaDataTitle.text = ""
         player.stop()
         player.source = "https://25433.live.streamtheworld.com/DECIBELEURODANCE.mp3"
         player.play()
-        heading.text = decibelEuroDance.text
     }
     function playTechno(){
+        heading.text = techno.text
+        metaDataTitle.text = ""
         player.stop()
         player.source = "http://stream.laut.fm/best-of-techno"
         player.play()
-        heading.text = techno.text
     }
     function playEnergy(){
+        heading.text = energy.text
+        metaDataTitle.text = ""
         player.stop()
         player.source = "https://radio.streemlion.com:1875/stream"
         player.play()
-        heading.text = energy.text
     }
 }
